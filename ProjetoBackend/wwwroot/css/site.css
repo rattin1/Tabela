@@ -46,14 +46,6 @@ body {
     margin-bottom: 50px;
 }
 
-/*body {
-    background-image: url('https://media.discordapp.net/attachments/1244983957020344321/1301137788233842790/Fundo.png?ex=6723627e&is=672210fe&hm=dddecd4e8998f5b7a154eaef4a4fd3f7f2f0e160ffc20b7571c9885c2c27ef99&=&format=webp&quality=lossless&width=619&height=467');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-}*/
-
 .search-container {
     display: flex;
     align-items: center;
@@ -120,6 +112,18 @@ td a {
     text-decoration: none;
 }
 
+.more-options {
+    background-color: transparent;
+    border: none;
+    padding: 15px;
+    padding-top: 0px;
+    border-radius: 5px;
+    align-items: center;
+    display: flex;
+    cursor: pointer;
+    height: 40px;
+}
+
 /*--------------------------------------------------------------------------------------------------*/
 
 .botao-criar {
@@ -155,16 +159,16 @@ td a {
 
 .row {
     display: flex;
-    gap: 15px; /* Espaçamento horizontal entre os campos */
-}
+    gap: 15px;
+    .col-md-6
 
-.col-md-6 {
-    flex: 1; /* Permite que cada campo ocupe metade da largura disponível */
+{
+    flex: 1;
 }
 
 .text-box-container {
     display: flex;
-    flex-direction: column; /* Mantém o input e a mensagem de erro em coluna */
+    flex-direction: column;
     align-items: flex-start;
 }
 
@@ -177,11 +181,11 @@ td a {
     height: 50px;
     background: none;
     font-weight: 400;
-    width: 100%; /* Certifique-se de que o input ocupa toda a largura */
+    width: 100%;
 }
 
 .text-danger {
-    font-size: 12px; /* Ajuste o tamanho da fonte se necessário */
-    margin-top: 5px; /* Espaço entre o input e a mensagem de erro */
-    color: #d9534f; /* Cor de erro padrão */
+    font-size: 12px;
+    margin-top: 5px;
+    color: #d9534f;
 }
