@@ -3,83 +3,76 @@
 @{
     ViewData["Title"] = "Criar";
 }
+<div class="container">
 
-<p style="font-size:50px; color: #000000; margin-bottom: 50px;"><strong>Clientes</strong></p>
+    <p class="titulo-criar"><strong>Clientes</strong></p>
 
-<hr class="border border-dark border-1">
+    <hr class="border border-dark border-1">
 
-<h4 style="font-weight:450;">Cadastro de Cliente</h4>
+    <h4 class="cadastro">Cadastro de Cliente</h4>
 
-<div class="row">
-    <div class="col-md-12">
-        <form asp-action="Create">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <input asp-for="Nome" class="form-control" placeholder="Nome" />
-                <span asp-validation-for="Nome" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input asp-for="Email" class="form-control" placeholder="Email" />
-                <span asp-validation-for="Email" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input asp-for="CnpjCpf" class="form-control" placeholder="CPF" />
-                <span asp-validation-for="CnpjCpf" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input asp-for="Celular" class="form-control" placeholder="Celular" />
-                <span asp-validation-for="Celular" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input asp-for="DataNascimento" class="form-control" placeholder="Data de Nascimento" />
-                <span asp-validation-for="DataNascimento" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-
-
-                <input type="hidden" asp-for="DataCadastro" class="form-control" />
-
-            </div>
-            <div class="form-group">
-
-                <input type="hidden" asp-for="CadastroAtivo" class="form-control" />
+    <div class="row">
+        <div class="col-md-12">
+            <form asp-action="Create">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="text-box-container form-group mb-2">
+                    <input asp-for="Nome" class="text-box-input form-control" placeholder="Nome" />
+                    <span asp-validation-for="Nome" class="text-danger"></span>
+                </div>
 
                 <div class="row">
-                    <div class="col col-md-6 mt-4 form-group">
-                        <input type="submit" value="Criar" class="btn" style="background-color: #8A2BE2; color: white; width: 283px; height: 49px; border-radius: 5px; font-weight: 500;" />
+                    <div class="col-md-6 text-box-container mb-2">
+                        <input asp-for="CnpjCpf" class="text-box-input form-control" placeholder="Cpf" />
+                        <span asp-validation-for="CnpjCpf" class="text-danger"></span>
                     </div>
-
-                    <div class="col col-md-6 mt-4 d-flex justify-content-end">
-                        <a class="btn m-0 p-0" style="background-color: rgba(138, 43, 226, 0.04); color: white; width: 283px; height: 49px; border-radius: 5px; border: 1px solid #C17DFF; display: flex; align-items: center; justify-content: center; text-decoration: none; font-size: 16px; font-weight: 500; color: #C17DFF;" asp-action="Index">Cancelar</a>
+                    <div class="col-md-6 text-box-container">
+                        <input asp-for="Celular" class="text-box-input form-control" oninput="formatarTelefone(this)" id="telefone" placeholder="Celular" />
+                        <span asp-validation-for="Celular" class="text-danger"></span>
                     </div>
                 </div>
 
-            </div>
+                <div class="text-box-container form-group mb-2">
+                    <input type="date" asp-for="DataNascimento" class="text-box-input form-control" />
+                    <span asp-validation-for="DataNascimento" class="text-danger"></span>
+                </div>
+                <div class="text-box-container form-group mb-2">
+                    <input asp-for="Email" class="text-box-input form-control" placeholder="Email" />
+                    <span asp-validation-for="Email" class="text-danger"></span>
+                </div>
+                <div class="form-group">
 
-        </form>
+
+                    <input type="hidden" asp-for="DataCadastro" class="form-control" />
+
+                </div>
+                <div class="form-group">
+
+                    <input type="hidden" asp-for="CadastroAtivo" class="form-control" />
+
+                    <div class="row">
+                        <div class="col col-md-6 mt-4 form-group">
+                            <input type="submit" value="Criar" class="btn botao-criar fw-semibold" />
+                        </div>
+
+                        <div class="col col-md-6 mt-4 d-flex justify-content-end">
+                            <a class="botao-cancelar btn m-0 p-0 fw-semibold" asp-action="Index">Cancelar</a>
+                        </div>
+                    </div>
+
+                </div>
+
+            </form>
+        </div>
     </div>
-</div>
 
 
-@section Scripts {
-    @{
-        await Html.RenderPartialAsync("_ValidationScriptsPartial");
-    }
-}
-
-<link rel="stylesheet" href="~/css/site.css" />
-
-
-<style>
-
-    .form-group {
-        border-radius: 0px; /* Borda levemente arredondada */
-        font-size: 16px;
-        color: #9B9B9B;
-    }
-
-        .form-group::placeholder {
-            color: #888; /* Cor do texto de placeholder */
+    @section Scripts {
+        @{
+            await Html.RenderPartialAsync("_ValidationScriptsPartial");
         }
+    }
 
-</style>
+    <link rel="stylesheet" href="~/css/site.css" />
+
+
+</div>
