@@ -21,7 +21,24 @@ body {
     margin-bottom: 60px;
 }
 
-<style >
+.botao-criar {
+    background-color: #932BE2;
+    color: white;
+    width: 197px;
+    height: 49px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 16px;
+    border-radius: 15px;
+}
+
+.titulo-cliente {
+    font-size: 50px;
+    color: #710ABF;
+    margin-bottom: 50px;
+}
 
 body {
     background-image: url('https://media.discordapp.net/attachments/1244983957020344321/1301137788233842790/Fundo.png?ex=6723627e&is=672210fe&hm=dddecd4e8998f5b7a154eaef4a4fd3f7f2f0e160ffc20b7571c9885c2c27ef99&=&format=webp&quality=lossless&width=619&height=467');
@@ -97,10 +114,7 @@ td a {
     text-decoration: none;
 }
 
-</style >
-
 /*--------------------------------------------------------------------------------------------------*/
-
 .form-group {
     border-radius: 100px; /* Borda levemente arredondada */
     border: 1px solid #C17DFF; /* Cor da borda */
