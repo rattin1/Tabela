@@ -8,6 +8,8 @@ html {
     }
 }
 
+/*--------------------------------EstiloTabela---------------------------------------*/
+
 .btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
     box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
 }
@@ -124,7 +126,7 @@ td a {
     height: 40px;
 }
 
-/*--------------------------------------------------------------------------------------------------*/
+/*--------------------------------EstiloCriar---------------------------------------*/
 
 .botao-criar {
     background-color: #8A2BE2;
@@ -188,4 +190,16 @@ td a {
     font-size: 12px;
     margin-top: 5px;
     color: #d9534f;
+}
+
+/*--------------------------------EstiloDelete---------------------------------------*/
+
+.titulodelete {
+    width: 20%;
+    text-align: left;
+}
+
+.conteudodelete {
+    width: 80%;
+    text-align: left;
 }
