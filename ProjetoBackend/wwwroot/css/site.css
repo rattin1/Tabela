@@ -160,7 +160,7 @@ td a {
     font-weight: 450;
 }
 
-.row {
+.crow {
     display: flex;
     gap: 15px;
     .col-md-6
