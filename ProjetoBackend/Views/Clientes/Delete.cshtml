@@ -38,23 +38,22 @@
             </div>
 
 
-            <div class="form-group">
 
-                <input type="hidden" asp-for="ClienteId" class="form-control" />
+            <input type="hidden" asp-for="ClienteId" class="form-control" />
 
-                <div class="row">
-                    <div class="col-12 col-md-6 mt-4 form-group w-100">
-                        <form asp-action="Delete">
-                            <input type="submit" value="Excluir" class="botao-criar fw-semibold" />
-                        </form>
-                    </div>
-
-                    <div class="col-12 col-md-6 mt-4 d-flex w-100 justify-content-end ">
-                        <a class="botao-cancelar m-0 p-0 fw-semibold" asp-action="Index">Cancelar</a>
-                    </div>
+            <div class="row">
+                <div class="col-12 col-md-6 mt-4">
+                    <form asp-action="Delete">
+                        <input type="submit" value="Excluir" class="botao-criar fw-semibold" />
+                    </form>
                 </div>
 
+                <div class="col-12 col-md-6 mt-4">
+                    <a class="botao-cancelar m-0 p-0 fw-semibold" asp-action="Index">Cancelar</a>
+                </div>
             </div>
+
+
         </div>
         <div class="col-12 col-md-1 col-lg-2"> </div>
 

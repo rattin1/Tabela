@@ -26,7 +26,7 @@ body {
 .botao-criar {
     background-color: #932BE2;
     color: white;
-    width: 197px;
+    width: 100%;
     height: 49px;
     display: flex;
     align-items: center;
@@ -131,7 +131,7 @@ td a {
 .botao-criar {
     background-color: #8A2BE2;
     color: white;
-    width: 283px;
+    width: 100%px;
     height: 49px;
     border-radius: 5px;
     font-weight: 300;
@@ -141,7 +141,7 @@ td a {
 .botao-cancelar {
     background-color: rgba(138, 43, 226, 0.04);
     color: white;
-    width: 283px;
+    width: 100%;
     height: 49px;
     border-radius: 5px;
     border: 1px solid #C17DFF;
