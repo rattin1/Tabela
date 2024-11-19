@@ -1,4 +1,4 @@
-﻿                @model IEnumerable<ProjetoBackend.Models.Servico>
+﻿@model IEnumerable<ProjetoBackend.Models.Servico>
 
 @{
     ViewData["Title"] = "Clientes";
@@ -8,7 +8,7 @@
     <p class="titulo-cliente fw-bold">Serviços</p>
 
     <form asp-action="Search" class="search-container text-end" method="get">
-        <input type="text" name="nome" placeholder="Buscar cliente..." class="search-input" />
+        <input type="text" name="nome" placeholder="Buscar serviços..." class="search-input" />
         <button type="submit" class="search-button"><ion-icon name="search"></ion-icon></button>
     </form>
 
@@ -20,6 +20,7 @@
                 <th>@Html.DisplayNameFor(model => model.Nome)</th>
                 <th>@Html.DisplayNameFor(model => model.ValorServico)</th>
                 <th></th>
+
             </tr>
         </thead>
         <tbody style="background: #FCFCFC">
@@ -47,9 +48,9 @@
 
 
 
-    <p>
-        <a asp-action="Create" class="botao-criar fw-semibold">Criar</a>
-    </p>
+    <div class="col-6 col-md-3">
+        <a class="botao-criar m-0 p-0 fw-semibold " asp-action="Create">Criar</a>
+    </div>
+
 
 </div>
-
