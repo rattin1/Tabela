@@ -1,49 +1,63 @@
 ﻿@model IEnumerable<ProjetoBackend.Models.ItemCompra>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Compras";
 }
 
-<h1>Index</h1>
+<div class="container">
+    <p class="titulo-cliente fw-bold">Itens de Compras</p>
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Compra)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Produto)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Quantidade)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var item in Model)
-        {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Compra.CompraId)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Produto.Nome)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Quantidade)
-                </td>
-                <td>
-                    <a asp-controller="ItensCompras" asp-action="Index" asp-route-id="@item.CompraId">Itens da Venda</a> |
-                    <a asp-action="Edit" asp-route-id="@item.ItemCompraId">Edit</a> |
-                    <a asp-action="Details" asp-route-id="@item.ItemCompraId">Details</a> |
-                    <a asp-action="Delete" asp-route-id="@item.ItemCompraId">Delete</a>
-                </td>
-            </tr>
-        }
-    </tbody>
-</table>
+    <form asp-action="Search" class="search-container text-end" method="get">
+        <input type="text" name="nome" placeholder="Buscar item..." class="search-input" />
+        <button type="submit" class="search-button"><ion-icon name="search"></ion-icon></button>
+    </form>
+
+
+
+    <div class="table-responsive">
+        <table>
+            <thead>
+                <tr>
+                    <th>@Html.DisplayNameFor(model => model.Compra)</th>
+                    <th>@Html.DisplayNameFor(model => model.Produto)</th>
+                    <th>@Html.DisplayNameFor(model => model.Quantidade)</th>
+
+
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody style="background: #FCFCFC">
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@Html.DisplayFor(modelItem => item.Compra.CompraId)</td>
+                        <td>@Html.DisplayFor(modelItem => item.Produto.Nome)</td>
+                        <td>@Html.DisplayFor(modelItem => item.Quantidade)</td>
+
+
+                        <td class="btn-group dropend">
+                            <a class="more-options" data-bs-toggle="dropdown" aria-expanded="false">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#A3A2A2" class="bi bi-three-dots" viewBox="0 0 16 16">
+                                    <path d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3" />
+                                </svg>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" asp-action="Edit" asp-route-id="@item.ItemCompraId">Editar</a></li>
+                                <li><a class="dropdown-item" asp-action="Delete" asp-route-id="@item.ItemCompraId">Excluir</a></li>
+                            </ul>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+
+
+
+    <div class="col-6 col-md-3">
+        <a class="botao-criar m-0 p-0 fw-semibold " asp-action="Create">Criar</a>
+    </div>
+
+
+</div>
